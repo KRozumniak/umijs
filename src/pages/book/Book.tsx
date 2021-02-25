@@ -16,7 +16,6 @@ function Book(props: any) {
     <div>
       <BookCreate />
       <h1>Books</h1>
-
       {
         booklist.map(el => <li key={el._id}>
           {el.name} - {el.createdAt} -
