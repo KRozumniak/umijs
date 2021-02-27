@@ -10,23 +10,13 @@ export interface IModel {
     getBooks: Effect;
     createBook: Effect;
     deleteBook: Effect;
+    updateBook: Effect;
   };
   reducers: {
     save: Reducer<IState>;
     set: Reducer<IState>;
   };
 }
-
-// const post = (url: string, obj = {}) =>
-//   axios({
-//     url: `http://localhost:5000/${url}`,
-//     method: 'POST',
-//     data: payload,
-//   }).then((res) => res.data)
-//     .catch((err) => err);
-//
-
-// const callGetBooks = () => post('book/search')
 
 const callGetBooks = () => axios({
   url: `http://localhost:5000/book/search`,
@@ -47,6 +37,13 @@ const callDeleteBook = (bookId: any) => axios({
 }).then((res) => res.data)
   .catch((err) => err);
 
+const callUpdateBook = (payload: any) => axios({
+  url: `http://localhost:5000/book/${payload.id}`,
+  method: 'PATCH',
+  data: payload.newName,
+}).then((res) => res.data)
+  .catch((err) => err);
+
 const Model: IModel = {
   namespace: 'Book',
 
@@ -64,6 +61,11 @@ const Model: IModel = {
     *deleteBook({payload}, { call, put }) {
       yield call(callDeleteBook, payload);
       yield put({ type: 'getBooks', payload: payload._id });
+    },
+    *updateBook({payload}, { call, put }) {
+      yield call(callUpdateBook, payload);
+      console.log(payload);
+      yield put({ type: 'getBooks', payload: payload.obj });
     },
   },
 

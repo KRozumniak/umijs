@@ -2,7 +2,8 @@ import styles from "../index.less";
 import { connect } from "umi";
 import { useEffect } from "react";
 import BookCreate from './BookCreate';
-import BookDelete from "@/pages/book/BookDelete";
+import { Button } from 'antd';
+import BookModal from "@/pages/book/BookModal";
 
 function Book(props: any) {
 
@@ -17,11 +18,12 @@ function Book(props: any) {
       <BookCreate />
       <h1>Books</h1>
       {
-        booklist.map(el => <li key={el._id}>
+        booklist.map((el: any) => <li key={el._id}>
           {el.name} - {el.createdAt} -
-          <button onClick={() => props.deleteBook(el._id)}>
+          <Button type='ghost' onClick={() => props.deleteBook(el._id)}>
             Delete
-          </button>
+          </Button>
+          <BookModal key={el._id} id={el._id}/>
         </li>)
       }
     </div>
