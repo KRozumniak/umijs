@@ -48,7 +48,6 @@ function bookUpdate (props: any) {
       >
         <Input />
       </Form.Item>
-
       <Form.Item {...tailLayout}>
         <Button type="primary" htmlType="submit" onClick={() => props.showModal(false)}>
           Submit
@@ -56,7 +55,6 @@ function bookUpdate (props: any) {
         <Button htmlType="button" onClick={onReset}>
           Reset
         </Button>
-
       </Form.Item>
     </Form>
   );

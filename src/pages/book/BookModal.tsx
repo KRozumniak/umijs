@@ -23,12 +23,10 @@ export default function App (props: any) {
         Update
       </Button>
       <Modal title="Basic Modal" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
-
         <BookUpdateForm
           id={props.id}
           showModal={setIsModalVisible}
         />
-
       </Modal>
     </>
   );
