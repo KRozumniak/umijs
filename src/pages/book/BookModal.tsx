@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Modal, Button, Form, Input } from 'antd';
+import { Modal, Button } from 'antd';
 import BookUpdateForm from "@/pages/book/BookUpdateForm";
 
 export default function App (props: any) {

@@ -1,7 +1,5 @@
 import { connect } from "umi";
-import { Form, Input, Button, Select } from 'antd';
-
-const { Option } = Select;
+import { Form, Input, Button } from 'antd';
 
 const layout = {
   labelCol: { span: 8 },
