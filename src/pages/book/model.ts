@@ -70,7 +70,6 @@ const Model: IModel = {
   },
 
   reducers: {
-
     save(state: any, { payload }: any) {
       return {
         ...state,
