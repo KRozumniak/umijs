@@ -2,6 +2,7 @@ import styles from "../index.less";
 import { connect } from "umi";
 
 function BookDelete(props: any) {
+
   const { bookList = [] } = props;
 
   return (
