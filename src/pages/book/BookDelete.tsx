@@ -1,4 +1,3 @@
-import styles from "../index.less";
 import { connect } from "umi";
 
 function BookDelete(props: any) {
@@ -7,7 +6,7 @@ function BookDelete(props: any) {
   return (
     <div>
       <button onClick={() => props.deleteBook(bookList.list._id)}>
-        Delete
+        Delete Book
       </button>
     </div>
   );
