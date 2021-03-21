@@ -3,9 +3,13 @@ import { connect } from "umi";
 function BookDelete(props: any) {
   const { bookList = [] } = props;
 
+  const deleteBookHandler = () => {
+    props.deleteBook(bookList.list._id)
+  }
+
   return (
     <div>
-      <button onClick={() => props.deleteBook(bookList.list._id)}>
+      <button onClick={deleteBookHandler}>
         Delete Book
       </button>
     </div>
